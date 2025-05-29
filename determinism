@@ -1,0 +1,7 @@
+def is_deterministic(transitions):
+ for state, symbol_dict in transitions.items():
+        for symbol, next_states in symbol_dict.items():
+            # A DFA should have exactly one next state for each state-symbol pair
+            if len(next_states) != 1:
+                return False
+    return True
